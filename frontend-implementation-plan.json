@@ -1,0 +1,169 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebuild Rweb Infotech Frontend with Warm Orange Theme and Generated Assets",
+  "requirements": [
+    {
+      "id": "REQ-31",
+      "summary": "Rebuild and redeploy the entire Rweb Infotech frontend so all pages (Home, Products, Brands, Laptop Detail, About Us, Contact, Chat) load correctly with proper navigation, header, and footer",
+      "acceptanceCriteria": [
+        "Home page loads with hero section, call-to-action buttons, and features section",
+        "Products page displays all laptop models in a searchable and filterable grid",
+        "Laptop Detail page shows image gallery, variant selector, and full specifications",
+        "About Us page displays descriptive content about Rweb Infotech",
+        "Contact page displays company location with Google Maps link, CEO name, and phone number",
+        "Chat page loads with AI assistant avatar and message interface",
+        "Site header shows Rweb Infotech logo, search bar, and navigation links (Home, Products, About Us, Contact, Chat) with working mobile menu",
+        "Site footer shows About Us text, Google Maps location link, CEO name, and contact phone number"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Update header to display the Rweb Infotech logo from frontend/public/assets/generated/rweb-logo.dim_512x256.png (resized to 200x60 display dimensions), add a search bar component, and ensure navigation links include Home, Products, About Us, Contact, and Chat with active state highlighting and working mobile menu"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Update footer to include About Us section text describing Rweb Infotech, add Google Maps location link for the company address, display CEO name, and show contact phone number with proper styling and layout"
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Rebuild Home page with hero section using frontend/public/assets/generated/laptops-hero.dim_1600x600.png as the hero banner image, add call-to-action buttons linking to Products/Brands pages, and include a features section highlighting key capabilities (major brands, detailed specs, easy search) with proper layout and spacing"
+        },
+        {
+          "path": "frontend/src/pages/ProductsPage.tsx",
+          "operation": "modify",
+          "description": "Verify Products page displays all laptop models in a searchable and filterable grid using existing CatalogFiltersBar and LaptopCard components, ensure proper error handling and loading states, and confirm navigation to detail pages works correctly"
+        },
+        {
+          "path": "frontend/src/pages/LaptopDetailPage.tsx",
+          "operation": "modify",
+          "description": "Verify Laptop Detail page shows image gallery with frontend/public/assets/generated/laptop-generic-1.dim_1200x900.png, laptop-generic-2.dim_1200x900.png, and laptop-generic-3.dim_1200x900.png as fallback images, variant selector with proper variant switching, and full specifications display using existing components (ImageGallery, VariantSelector, SpecsSections)"
+        },
+        {
+          "path": "frontend/src/pages/AboutUsPage.tsx",
+          "operation": "modify",
+          "description": "Verify About Us page displays comprehensive descriptive content about Rweb Infotech including company overview, mission, vision, and values sections with proper card layouts and icon usage"
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Update Contact page to display company location with embedded or linked Google Maps integration, show CEO name prominently, display contact phone number, and ensure proper layout with card components"
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "modify",
+          "description": "Update Chat page to use frontend/public/assets/generated/ai-girl-avatar.dim_512x512.png (resized to 128x128 display dimensions) as the AI assistant avatar, verify message interface works with useChatWithAssistant hook, and ensure chat background styling is applied correctly"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify all routes are properly configured for Home, Products, Brands, Catalog, Laptop Detail, About Us, Contact, and Chat pages with correct path mappings and that SiteLayout wrapper is applied to all routes"
+        },
+        {
+          "path": "frontend/src/components/layout/SearchBar.tsx",
+          "operation": "create",
+          "description": "Create a search bar component with input field and search icon that can be embedded in the SiteHeader, supporting navigation to Products/Catalog page with search query parameter"
+        }
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "summary": "Apply dynamic warm orange/amber color palette theme consistently across all pages with hover effects, smooth transitions, and coherent design on desktop and mobile",
+      "acceptanceCriteria": [
+        "All pages use the warm orange/amber OKLCH color system defined in index.css",
+        "Product cards display visible hover effects (shadow lift, scale, or color change)",
+        "Navigation links show active state highlighting",
+        "Transitions and animations are consistent across all interactive elements",
+        "Theme is coherent on both desktop and mobile viewports"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define a comprehensive warm orange/amber OKLCH color system replacing any blue/purple colors, including primary (oklch(0.65 0.19 45)), secondary (oklch(0.55 0.15 40)), accent (oklch(0.70 0.20 50)), and neutral tones, with proper light/dark mode variants using CSS custom properties, and ensure chat page background utility class is defined"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind configuration to reference the warm orange/amber OKLCH color variables from index.css in the theme.extend.colors section, ensure transition utilities are configured, and verify extended animations are properly defined"
+        },
+        {
+          "path": "frontend/src/components/catalog/LaptopCard.tsx",
+          "operation": "modify",
+          "description": "Enhance hover effects on laptop cards to include visible shadow lift (shadow-lg on hover), subtle scale transform (scale-105), and/or warm color accent changes using the orange/amber palette, with smooth transitions applied to all transform properties"
+        },
+        {
+          "path": "frontend/src/components/brands/BrandTile.tsx",
+          "operation": "modify",
+          "description": "Verify brand tiles have visible hover effects including shadow, scale, translate, and image zoom transformations using the warm orange/amber theme colors with smooth transitions"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Apply active state highlighting to navigation links using warm orange/amber accent colors with underline or background color changes, ensure smooth transitions on hover and active states, and verify mobile menu styling is consistent with the theme"
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Apply warm orange/amber theme colors to hero section elements (headings, buttons, accents), ensure call-to-action buttons have hover effects with color transitions and scale transforms, and verify features section uses consistent theme colors and spacing"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Apply warm orange/amber theme colors to footer background, text, and link hover states with smooth transitions, ensuring visual consistency with the overall theme"
+        }
+      ]
+    },
+    {
+      "id": "REQ-33",
+      "summary": "Wire all required generated static images into the UI from frontend/public/assets/generated including logo, hero banner, brand placeholders, laptop placeholders, and chat avatar",
+      "acceptanceCriteria": [
+        "Rweb Infotech logo image is present and renders in the site header",
+        "Hero/banner image is present and renders on the Home page",
+        "Brand placeholder images are present and shown for brands without real logos",
+        "Laptop product placeholder images are present and used in product cards and detail pages when real images are missing",
+        "No broken image links appear anywhere in the UI"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/assets/placeholders.ts",
+          "operation": "modify",
+          "description": "Update placeholder image utility functions to reference the correct generated image paths: frontend/public/assets/generated/laptop-generic-1.dim_1200x900.png, laptop-generic-2.dim_1200x900.png, laptop-generic-3.dim_1200x900.png for laptop placeholders, and frontend/public/assets/generated/brand-placeholder.dim_256x256.png for brand placeholders, ensuring proper fallback logic when actual image URLs are missing or invalid"
+        },
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/rweb-logo.dim_512x256.png as the Rweb Infotech logo image source in the header, with appropriate alt text and display dimensions (width 200px, height 60px), ensuring the image loads correctly and handles errors gracefully"
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/laptops-hero.dim_1600x600.png as the hero banner background or foreground image in the hero section, with appropriate alt text and responsive sizing (max-width 1200px, height 400px display), ensuring the image loads correctly"
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/ai-girl-avatar.dim_512x512.png as the AI assistant avatar image source, with display dimensions of 128x128px, appropriate alt text, and error handling to ensure the avatar renders correctly in the chat interface"
+        },
+        {
+          "path": "frontend/src/components/brands/BrandTile.tsx",
+          "operation": "modify",
+          "description": "Update brand tile to use frontend/public/assets/generated/brand-placeholder.dim_256x256.png as fallback when brand imageUrls are empty or invalid, ensuring consistent placeholder display with proper alt text and error handling"
+        },
+        {
+          "path": "frontend/src/components/catalog/LaptopCard.tsx",
+          "operation": "modify",
+          "description": "Ensure laptop cards use the placeholder image utility from lib/assets/placeholders.ts which references frontend/public/assets/generated/laptop-generic-1.dim_1200x900.png (or other generic laptop images) as fallback when product imageUrls are missing, with proper error handling and alt text"
+        },
+        {
+          "path": "frontend/src/components/laptop/ImageGallery.tsx",
+          "operation": "modify",
+          "description": "Ensure image gallery uses the placeholder image utility from lib/assets/placeholders.ts which references frontend/public/assets/generated/laptop-generic-1.dim_1200x900.png, laptop-generic-2.dim_1200x900.png, and laptop-generic-3.dim_1200x900.png as fallback images when variant imageUrls are missing, with proper error handling and alt text"
+        }
+      ]
+    }
+  ]
+}

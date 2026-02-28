@@ -1,0 +1,97 @@
+{
+  "kind": "build_request",
+  "title": "Rebuild and redeploy Rweb Infotech dynamic laptop selling & services website",
+  "projectName": "Rweb Infotech",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-31",
+      "text": "Rebuild and redeploy the entire Rweb Infotech application (frontend + backend) so it runs successfully in production without runtime errors, with all existing pages (Home, Products, Brands, Laptop Detail, About Us, Contact, Chat) loading correctly.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "build a rweb infotech dynamic latop selling & sevices website based on html"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Application deploys successfully to the Internet Computer without build or runtime errors",
+        "Home page loads with hero section, call-to-action buttons, and features section",
+        "Products page displays all laptop models in a searchable and filterable grid",
+        "Laptop Detail page shows image gallery, variant selector, and full specifications",
+        "About Us page displays descriptive content about Rweb Infotech",
+        "Contact page displays company location with Google Maps link, CEO name, and phone number",
+        "Chat page loads with AI assistant avatar and message interface",
+        "Site header shows Rweb Infotech logo, search bar, and navigation links (Home, Products, About Us, Contact, Chat) with working mobile menu",
+        "Site footer shows About Us text, Google Maps location link, CEO name, and contact phone number"
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "text": "Ensure the visual theme across all pages is dynamic and engaging with a warm orange/amber color palette (non-blue/purple), consistent typography, spacing, hover effects on product cards, and smooth transitions on interactive elements.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "dynamic latop selling & sevices website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages use the warm orange/amber OKLCH color system defined in index.css",
+        "Product cards display visible hover effects (shadow lift, scale, or color change)",
+        "Navigation links show active state highlighting",
+        "Transitions and animations are consistent across all interactive elements",
+        "Theme is coherent on both desktop and mobile viewports"
+      ]
+    },
+    {
+      "id": "REQ-33",
+      "text": "Ensure all required generated static images exist under frontend/public/assets/generated and are correctly referenced throughout the UI, including the Rweb Infotech logo, hero/banner image, brand placeholder images, and laptop product images.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "dynamic latop selling & sevices website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Rweb Infotech logo image is present and renders in the site header",
+        "Hero/banner image is present and renders on the Home page",
+        "Brand placeholder images are present and shown for brands without real logos",
+        "Laptop product placeholder images are present and used in product cards and detail pages when real images are missing",
+        "No broken image links appear anywhere in the UI"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "All Motoko backend logic must remain in a single actor in backend/main.mo",
+    "Do not use blue or purple as the primary palette color",
+    "Generated images must be served as static assets under frontend/public/assets/generated, not through the backend"
+  ],
+  "nonGoals": [
+    "Adding new product categories or data not already in the backend seed data",
+    "Integrating external payment gateways beyond the existing configurable PhonePe UPI link",
+    "Adding real-time features or WebSocket communication",
+    "Changing the authentication system away from Internet Identity"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Rweb Infotech brand logo with tech laptop motif, warm orange and dark navy colors (rweb-logo.dim_200x60.png)",
+      "Wide hero banner showing a sleek modern laptop on a dark background with warm orange accent lighting (hero-banner.dim_1200x400.png)",
+      "Apple brand placeholder logo tile, minimalist white apple silhouette on warm gray background (brand-apple.dim_300x200.png)",
+      "Dell brand placeholder logo tile, bold Dell wordmark style on warm gray background (brand-dell.dim_300x200.png)",
+      "HP brand placeholder logo tile, HP circle logo style on warm gray background (brand-hp.dim_300x200.png)",
+      "Asus brand placeholder logo tile, Asus wordmark style on warm gray background (brand-asus.dim_300x200.png)",
+      "Generic laptop product placeholder image showing a side-view laptop silhouette on a light neutral background (laptop-placeholder.dim_600x400.png)",
+      "Cute anime-style girl AI assistant avatar with warm expression, tech-themed accessories (chat-avatar.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 13,
+  "summary": "Build an HTML-based Rweb Infotech static website with About Us, laptop catalog with specifications, location/contact details, and a dynamic visual presentation; support development in Visual Studio Code.",
+  "architectural_notes": [
+    "Site will be built using plain HTML (static site).",
+    "Development environment: Visual Studio Code"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Rweb Infotech brand logo with tech laptop motif, warm orange and dark navy colors (rweb-logo.dim_200x60.png)\n- Wide hero banner showing a sleek modern laptop on a dark background with warm orange accent lighting (hero-banner.dim_1200x400.png)\n- Apple brand placeholder logo tile, minimalist white apple silhouette on warm gray background (brand-apple.dim_300x200.png)\n- Dell brand placeholder logo tile, bold Dell wordmark style on warm gray background (brand-dell.dim_300x200.png)\n- HP brand placeholder logo tile, HP circle logo style on warm gray background (brand-hp.dim_300x200.png)\n- Asus brand placeholder logo tile, Asus wordmark style on warm gray background (brand-asus.dim_300x200.png)\n- Generic laptop product placeholder image showing a side-view laptop silhouette on a light neutral background (laptop-placeholder.dim_600x400.png)\n- Cute anime-style girl AI assistant avatar with warm expression, tech-themed accessories (chat-avatar.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-rweb-infotech-marketing-catalog-website-frontend-that-presents-a-laptop-catalog-organized-by-brand-and-model-with-clear-navigation-and-page-structure",
+      "title": "Create a responsive Rweb Infotech marketing/catalog website frontend that presents a laptop catalog organized by brand and model, with clear navigation and page structure.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-brands-view-that-lists-available-laptop-brands-and-allows-users-to-filter-the-catalog-by-selecting-a-brand",
+      "title": "Implement a Brands view that lists available laptop brands and allows users to filter the catalog by selecting a brand.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-laptops-catalog-view-that-lists-laptop-models-with-key-summary-specs-and-supports-basic-searching-and-filtering",
+      "title": "Implement a Laptops (catalog) view that lists laptop models with key summary specs and supports basic searching and filtering.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-laptop-detail-view-that-shows-multiple-images-per-laptop-image-gallery-plus-full-specifications-and-supports-viewing-multiple-versions-variants-of-the-same-laptop-model",
+      "title": "Implement a Laptop Detail view that shows multiple images per laptop (image gallery) plus full specifications, and supports viewing multiple versions/variants of the same laptop model.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-the-frontend-to-the-backend-apis-using-react-query-for-loading-states-caching-and-error-handling-for-brands-catalog-and-laptop-detail-pages",
+      "title": "Connect the frontend to the backend APIs using React Query for loading states, caching, and error handling for brands, catalog, and laptop detail pages.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-for-the-rweb-infotech-website-colors-typography-spacing-component-styling-and-enforce-it-consistently-across-all-pages-without-using-a-blue-purple-default-palette",
+      "title": "Apply a cohesive visual theme for the Rweb Infotech website (colors, typography, spacing, component styling) and enforce it consistently across all pages without using a blue/purple default palette.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-laptop-placeholder-imagery-as-local-frontend-assets-and-use-them-in-the-ui-when-real-product-images-are-not-available",
+      "title": "Add generated static brand/laptop placeholder imagery as local frontend assets and use them in the UI when real product images are not available.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-header-to-match-the-requested-structure-show-the-rweb-infotech-logo-a-search-bar-and-navigation-links-for-home-products-about-us-and-contact-ensure-the-header-remains-responsive-with-a-working-mobile-menu",
+      "title": "Update the site header to match the requested structure: show the Rweb Infotech logo, a search bar, and navigation links for Home, Products, About Us, and Contact; ensure the header remains responsive with a working mobile menu.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-new-routes-pages-for-products-about-us-and-contact-and-update-existing-page-labels-content-so-user-facing-navigation-matches-the-requested-ia-home-products-about-us-contact-in-english",
+      "title": "Add new routes/pages for Products, About Us, and Contact, and update existing page labels/content so user-facing navigation matches the requested IA (Home, Products, About Us, Contact) in English.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-unified-products-grid-page-that-displays-laptops-computers-desktops-and-cpus-together-with-clear-product-cards-including-hover-effects-and-search-support-driven-by-the-header-search-bar",
+      "title": "Implement a unified Products grid page that displays laptops, computers/desktops, and CPUs together, with clear product cards (including hover effects) and search support (driven by the header search bar).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-unified-product-detail-page-for-all-product-categories-that-displays-a-gallery-of-4-5-images-and-detailed-specifications-for-the-selected-product",
+      "title": "Create a unified Product Detail page for all product categories that displays a gallery of 4–5 images and detailed specifications for the selected product.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-buy-now-button-on-the-product-detail-page-that-opens-phonepe-via-a-upi-payment-link-the-link-must-be-configurable-since-no-upi-id-link-was-provided-and-should-open-in-a-new-tab-window",
+      "title": "Add a 'Buy Now' button on the Product Detail page that opens PhonePe via a UPI payment link; the link must be configurable (since no UPI id/link was provided) and should open in a new tab/window.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-footer-to-include-about-us-text-a-google-maps-location-link-ceo-name-and-contact-phone-number-while-keeping-the-footer-responsive-and-readable-on-mobile",
+      "title": "Update the site footer to include: About Us text, a Google Maps location link, CEO name, and contact phone number, while keeping the footer responsive and readable on mobile.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-expired-rweb-infotech-draft-and-ensure-the-application-deploys-successfully-end-to-end-frontend-backend-without-runtime-errors-with-all-existing-pages-loading-correctly-in-production",
+      "title": "Rebuild the expired Rweb Infotech draft and ensure the application deploys successfully end-to-end (frontend + backend) without runtime errors, with all existing pages loading correctly in production.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-required-generated-static-images-exist-under-frontend-public-assets-generated-and-are-correctly-referenced-by-the-ui-logo-and-hero-banner-at-minimum",
+      "title": "Ensure the required generated static images exist under frontend/public/assets/generated and are correctly referenced by the UI (logo and hero/banner at minimum).",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-frontend-chat-page-that-lets-any-visitor-type-questions-and-receive-responses-from-the-backend-cute-girl-personal-ai",
+      "title": "Create a new frontend Chat page that lets any visitor type questions and receive responses from the backend “cute girl” personal AI.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-site-navigation-so-users-can-discover-and-open-the-new-chat-page-from-the-existing-layout",
+      "title": "Update site navigation so users can discover and open the new Chat page from the existing layout.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-lightweight-chat-persona-presentation-on-the-chat-page-including-a-static-avatar-image-and-brief-assistant-intro-copy",
+      "title": "Add a lightweight chat persona presentation on the Chat page including a static avatar image and brief assistant intro copy.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-new-chat-feature-works-end-to-end-in-production-builds-with-no-runtime-errors",
+      "title": "Ensure the new Chat feature works end-to-end in production builds with no runtime errors.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-and-redeploy-the-entire-rweb-infotech-application-frontend-backend-so-it-runs-successfully-in-production-without-runtime-errors",
+      "title": "Rebuild and redeploy the entire Rweb Infotech application (frontend + backend) so it runs successfully in production without runtime errors",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-required-generated-static-images-exist-under-frontend-public-assets-generated-and-are-correctly-referenced-throughout-the-ui-including-the-rweb-infotech-logo-hero-banner-brand-placeholders-and-laptop-product-images",
+      "title": "Ensure all required generated static images exist under frontend/public/assets/generated and are correctly referenced throughout the UI, including the Rweb Infotech logo, hero banner, brand placeholders, and laptop product images",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-about-us-page-exists-with-descriptive-content-about-rweb-infotech-accessible-via-navigation",
+      "title": "Verify the About Us page exists with descriptive content about Rweb Infotech, accessible via navigation",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-products-page-displays-all-laptops-with-key-specifications-processor-ram-storage-in-a-searchable-and-filterable-grid",
+      "title": "Verify the Products page displays all laptops with key specifications (processor, RAM, storage) in a searchable and filterable grid",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-contact-page-displays-the-company-location-with-google-maps-link-ceo-name-and-contact-phone-number-in-a-mobile-responsive-format",
+      "title": "Verify the Contact page displays the company location (with Google Maps link), CEO name, and contact phone number in a mobile-responsive format",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-site-maintains-a-cohesive-dynamic-visual-theme-with-consistent-colors-typography-spacing-and-interactive-effects-hover-states-transitions-across-all-pages",
+      "title": "Verify the site maintains a cohesive, dynamic visual theme with consistent colors, typography, spacing, and interactive effects (hover states, transitions) across all pages",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-and-redeploy-the-entire-rweb-infotech-application-frontend-backend-so-it-runs-successfully-in-production-without-runtime-errors-with-all-existing-pages-home-products-brands-laptop-detail-about-us-contact-chat-loading-correctly",
+      "title": "Rebuild and redeploy the entire Rweb Infotech application (frontend + backend) so it runs successfully in production without runtime errors, with all existing pages (Home, Products, Brands, Laptop Detail, About Us, Contact, Chat) loading correctly.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-visual-theme-across-all-pages-is-dynamic-and-engaging-with-a-warm-orange-amber-color-palette-non-blue-purple-consistent-typography-spacing-hover-effects-on-product-cards-and-smooth-transitions-on-interactive-elements",
+      "title": "Ensure the visual theme across all pages is dynamic and engaging with a warm orange/amber color palette (non-blue/purple), consistent typography, spacing, hover effects on product cards, and smooth transitions on interactive elements.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-required-generated-static-images-exist-under-frontend-public-assets-generated-and-are-correctly-referenced-throughout-the-ui-including-the-rweb-infotech-logo-hero-banner-image-brand-placeholder-images-and-laptop-product-images",
+      "title": "Ensure all required generated static images exist under frontend/public/assets/generated and are correctly referenced throughout the UI, including the Rweb Infotech logo, hero/banner image, brand placeholder images, and laptop product images.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an HTML Rweb Infotech website showcasing all laptop brands with specs, all versions/models, and multiple images per laptop.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a backend Motoko data model and query API for laptop brands, laptop models, and laptop versions/variants, including image metadata (list of image URLs/paths per model/version). Seed the canister with an initial dataset that demonstrates multiple brands and multiple versions per model.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add product categories beyond laptops (computers/desktops and CPUs) and display them in a unified Products grid for brands like HP, Dell, Asus, and MacBook/Apple.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement product detail pages with a 4–5 image gallery per product and detailed specifications.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add a 'Buy Now' button that opens PhonePe via a UPI payment link.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Create a header with logo, search bar, and navigation (Home, Products, About Us, Contact), plus a footer including About Us, Google Maps location link, CEO name, and contact number.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Ensure responsive, mobile-friendly UI with hover effects on product cards.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Expand the backend data model and query API beyond laptops to support a unified product catalog containing at least: laptops, computers/desktops, and CPUs, seeded with brands including HP, Dell, Asus, and Apple/MacBook; include enough image metadata so each product can display a 4–5 image gallery on the detail view.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add a backend chat response API that returns a friendly, “cute girl” assistant style reply to any user question without using any external AI/LLM services.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Verify the Laptop Detail page displays full specifications for each laptop model, including support for viewing multiple variants/versions",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Ensure the backend Motoko canister contains seeded data for multiple laptop brands (HP, Dell, Asus, Apple) with multiple models and variants per brand, each with 4-5 image paths",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Rweb Infotech",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
